@@ -1,12 +1,15 @@
 import tw from 'tailwind-styled-components'
 
 import CommonLogo from '../../common/CommonLogo/CommonLogo'
+import TheHeaderMenu from '../TheHeaderMenu/TheHeaderMenu'
 
 const HeaderContainer = tw.header`
   flex
   justify-between
-  py-10
-  px-4
+  items-center
+  px-16
+  py-5
+  bg-white
 `
 
 const TheHeader: React.FC<React.HTMLAttributes<HTMLElement>> = ({
@@ -14,7 +17,11 @@ const TheHeader: React.FC<React.HTMLAttributes<HTMLElement>> = ({
 }) => {
   return (
     <HeaderContainer {...headerProps}>
-      <CommonLogo />
+      <a href="#" title="Home">
+        <CommonLogo />
+      </a>
+
+      <TheHeaderMenu />
     </HeaderContainer>
   )
 }
