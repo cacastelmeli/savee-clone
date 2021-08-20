@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import type { IconType, IconBaseProps } from 'react-icons'
 import { BsSearch, BsCursor } from 'react-icons/bs'
+import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import tw from 'tailwind-styled-components'
 
 const HeaderMenuList = tw.ul`
@@ -59,6 +60,10 @@ const TheHeaderMenu: React.FC = () => {
       <HeaderMenuItemButton
         Icon={BsCursor}
         iconProps={{ style: { transform: 'rotateY(180deg)' }, size: 20 }}
+      />
+      <HeaderMenuItemButton
+        Icon={BiDotsHorizontalRounded}
+        iconProps={{ size: 25 }}
       />
     </HeaderMenuList>
   )
