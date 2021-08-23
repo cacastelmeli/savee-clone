@@ -40,7 +40,7 @@ const HeaderMenuItemButton: React.FC<HeaderMenuItemButtonProps> = ({
         {...buttonProps}>
         {Icon && (
           <Icon
-            className={`text-gray-${hovered ? '400' : '900'} ${
+            className={`text-gray-${hovered ? '400' : '700'} ${
               iconProps?.className ?? ''
             }`}
             size={18}

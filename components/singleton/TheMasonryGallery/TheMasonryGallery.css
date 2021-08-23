@@ -1,0 +1,9 @@
+.gallery-image-container {
+  @apply w-full;
+  @apply h-full;
+  @apply relative;
+}
+
+.gallery-image-container:hover figcaption {
+  @apply block;
+}

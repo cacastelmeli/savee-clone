@@ -1358,6 +1358,56 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
+"@mockpiler/code-frame@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/code-frame/-/code-frame-0.1.1.tgz#cd605fcf5cc848b5bb771d7af061b9da69411b4a"
+  integrity sha512-boizF015B9VM73pERC6nQmxxmngGDRNungIZ8ZoAYQn+U95lmIqWClizx7zRLoNqXllX3csvYMWKAcQGag2gNQ==
+  dependencies:
+    "@mockpiler/lexer" "^0.1.0"
+
+"@mockpiler/compiler@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/compiler/-/compiler-0.1.1.tgz#a58ec0c5c9af79e4a24ee3192038320ff12c3342"
+  integrity sha512-5vTHPnFYfGdgL9NnXljforWpjCsPh+6lfJ5t600+gsa9Yd6AYcOchxLTwaA0AjNmVcnC0yOoLmGaPfdt6pOC5g==
+  dependencies:
+    "@mockpiler/context" "^0.1.0"
+    "@mockpiler/lexer" "^0.1.0"
+    "@mockpiler/parser" "^0.1.0"
+    "@mockpiler/transform" "^0.1.0"
+
+"@mockpiler/context@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/context/-/context-0.1.1.tgz#ce3b641b89889397b5f8fe52bcf9da51546e097f"
+  integrity sha512-Pus7NcCL52hjBvsYWn0O4xithGKY2HhH1+75zgF79m15W5KORQ8H1MUwncIbEo8tPkE0X3pys2xcbkRzxD5fMg==
+
+"@mockpiler/lexer@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/lexer/-/lexer-0.1.1.tgz#a759b5e9e016bfb38a5b75b137700dcfc072fa42"
+  integrity sha512-l4UAS9Tviu41kg5JBM1DwGZfHGX+HeZdmf6VRkmwFC3IayO9TqxjfqLeqnVKfLAPC90P8nJHOnRV6hix703UnA==
+
+"@mockpiler/parser@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/parser/-/parser-0.1.1.tgz#d722d48d03861392d5132a02524646b325481db8"
+  integrity sha512-Xdimdk9GMNkOnceGwD27NBboeGbYiOvB+NT3Ne/hGTVELHcpRKqHR58FESk+fcwPXpTTlHFvehdxjfl/j/zlXA==
+  dependencies:
+    "@mockpiler/code-frame" "^0.1.0"
+    "@mockpiler/lexer" "^0.1.0"
+
+"@mockpiler/transform@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@mockpiler/transform/-/transform-0.1.1.tgz#b086dfeaaa885c0e1b3d9f5e38b9aba3c6a3c5be"
+  integrity sha512-lHrGLUAdGE44NSrdYQxaCTAost7DC8l/YQCJcfUNsG4cLlLmONcu+WCweKoeoKq6RHplJ/FGWvT9K+zJozavvQ==
+  dependencies:
+    "@mockpiler/code-frame" "^0.1.0"
+    "@mockpiler/lexer" "^0.1.0"
+
+"@mockpiler/type-compiler@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@mockpiler/type-compiler/-/type-compiler-0.1.0.tgz#0305ab9129c41ebc9d5ef4489c0469cfc11494cb"
+  integrity sha512-tVp3WO6T+93GgD4EMXge9AHSR9jQ/SOV1eUW9XUfdvGk/zk6tPSRXjZJE5gIoAfJDmw1G76tM8aFZDSlfRhkqg==
+  dependencies:
+    "@mockpiler/lexer" "^0.1.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8976,6 +9026,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-masonry-css@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/react-masonry-css/-/react-masonry-css-1.0.16.tgz#72b28b4ae3484e250534700860597553a10f1a2c"
+  integrity sha512-KSW0hR2VQmltt/qAa3eXOctQDyOu7+ZBevtKgpNDSzT7k5LA/0XntNa9z9HKCdz3QlxmJHglTZ18e4sX4V8zZQ==
 
 react-popper-tooltip@^3.1.1:
   version "3.1.1"

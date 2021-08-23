@@ -11,10 +11,13 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@mockpiler/compiler": "^0.1.1",
+    "@mockpiler/type-compiler": "^0.1.0",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
+    "react-masonry-css": "^1.0.16",
     "tailwind-styled-components": "^2.0.3"
   },
   "devDependencies": {
