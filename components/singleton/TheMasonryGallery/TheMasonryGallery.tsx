@@ -16,15 +16,6 @@ export interface TheMasonryGalleryProps {
 }
 
 const TheMasonryGallery: React.FC<TheMasonryGalleryProps> = ({ items }) => {
-  useEffect(() => {
-    const $masonryGallery = document.getElementById('gallery')!
-    const onGalleryScroll = (e: Event) => {
-      console.log('e:', e)
-    }
-
-    $masonryGallery.addEventListener('scroll', onGalleryScroll)
-  }, [])
-
   return (
     <Masonry
       id="gallery"
