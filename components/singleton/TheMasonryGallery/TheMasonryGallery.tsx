@@ -1,7 +1,5 @@
 import Masonry from 'react-masonry-css'
 import { BsPlus } from 'react-icons/bs'
-import './TheMasonryGallery.css'
-import { useEffect } from 'react'
 
 export interface GalleryItem {
   id: number
@@ -28,7 +26,7 @@ const TheMasonryGallery: React.FC<TheMasonryGalleryProps> = ({ items }) => {
             <img className="object-cover w-full h-full" src={item.image.url} />
 
             <figcaption className="hidden absolute bottom-3 right-3">
-              <button className="bg-gray-900 p-2">
+              <button className="bg-gray-900 p-2 hover:opacity-80">
                 <BsPlus className="text-white" size={25} />
               </button>
             </figcaption>
