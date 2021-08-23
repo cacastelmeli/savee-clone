@@ -6,7 +6,7 @@ import CommonLogo from '../../common/CommonLogo/CommonLogo'
 import TheHeaderMenu from '../TheHeaderMenu/TheHeaderMenu'
 
 const StyledHeaderContainer = styled.header`
-  transition: transform linear 25ms;
+  transition: transform linear 15ms;
 `
 
 const HeaderContainer = tw(StyledHeaderContainer)`
