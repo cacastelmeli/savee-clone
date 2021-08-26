@@ -1,15 +1,10 @@
-import styled from 'styled-components'
 import tw from 'tailwind-styled-components'
 import { forwardRef } from 'react'
 
 import CommonLogo from '../../common/CommonLogo/CommonLogo'
 import TheHeaderMenu from '../TheHeaderMenu/TheHeaderMenu'
 
-const StyledHeaderContainer = styled.header`
-  transition: transform linear 15ms;
-`
-
-const HeaderContainer = tw(StyledHeaderContainer)`
+const HeaderContainer = tw.header`
   sticky
   top-0
   flex

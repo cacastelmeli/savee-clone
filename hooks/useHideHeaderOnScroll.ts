@@ -26,7 +26,10 @@ export const useHideHeaderOnScroll = (
         Math.max(headerOffset + scrollDiff, -headerHeight)
       )
 
-      $header.style.transform = `translateY(${headerOffset}px)`
+      Object.assign($header.style, {
+        transform: `translate3d(0, ${headerOffset}px, 0)`,
+        transition: 'all 15ms linear',
+      })
     }
 
     document.addEventListener('scroll', onDocumentScroll)

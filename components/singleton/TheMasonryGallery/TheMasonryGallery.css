@@ -2,6 +2,27 @@
   @apply w-full;
   @apply h-full;
   @apply relative;
+  @apply border-0;
+}
+
+.gallery-image-container::after {
+  content: '';
+
+  @apply border-blue-500;
+  @apply absolute;
+  @apply top-0;
+  @apply left-0;
+  @apply right-0;
+  @apply bottom-0;
+  @apply border-0;
+
+  transition: border-width linear 150ms;
+}
+
+.gallery-image-container.selected::after {
+  @apply border-8;
+  @apply bg-blue-900;
+  @apply bg-opacity-25;
 }
 
 .gallery-image-container:hover figcaption {

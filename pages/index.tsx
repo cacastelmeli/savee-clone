@@ -8,6 +8,7 @@ import TheMasonryGallery, {
 } from '../components/singleton/TheMasonryGallery/TheMasonryGallery'
 import { useRef } from 'react'
 import { useHideHeaderOnScroll } from '../hooks/useHideHeaderOnScroll'
+import { SelectableGalleryProvider } from '../hooks/useSelectableGallery'
 
 const heights = [200, 300, 500, 800]
 
@@ -42,10 +43,11 @@ const Home: NextPage = () => {
   useHideHeaderOnScroll(headerRef)
 
   return (
-    <div className="relative">
+    <SelectableGalleryProvider>
       <TheHeader ref={ref => (headerRef.current = ref!)} />
+
       <TheMasonryGallery items={items} />
-    </div>
+    </SelectableGalleryProvider>
   )
 }
 
