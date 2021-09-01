@@ -1,13 +1,21 @@
+@import '../components/singleton/TheMasonryGallery/TheMasonryGallery.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '../components/singleton/TheMasonryGallery/TheMasonryGallery.css';
 
 * {
   user-select: none !important;
 }
 
-.masonry-gallery {
-  display: flex;
+.selectable-area {
+  position: relative;
+  column-count: 3;
+  column-gap: 0;
+}
+
+.selection-box {
+  @apply absolute;
+  @apply bg-gray-700;
+  @apply bg-opacity-50;
 }

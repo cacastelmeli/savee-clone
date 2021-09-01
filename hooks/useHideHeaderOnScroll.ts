@@ -17,7 +17,7 @@ export const useHideHeaderOnScroll = (
 
       const { height: headerHeight } = $header.getBoundingClientRect()
 
-      const currentScroll = $scroll.scrollTop
+      const currentScroll = Math.max($scroll.scrollTop, 0)
       const scrollDiff = lastScroll - currentScroll
       lastScroll = currentScroll
 

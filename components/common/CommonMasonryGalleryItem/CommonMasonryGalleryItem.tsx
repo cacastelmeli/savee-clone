@@ -1,6 +1,5 @@
+import { SelectableItem } from '@aeroxmotion/react-selectable'
 import { BsPlus } from 'react-icons/bs'
-
-import { useSelectableGallery } from '../../../hooks/useSelectableGallery'
 
 export interface GalleryItem {
   id: number
@@ -17,40 +16,30 @@ export interface CommonMasonryGalleryItemProps {
 const CommonMasonryGalleryItem: React.FC<CommonMasonryGalleryItemProps> = ({
   item,
 }) => {
-  const {
-    registerSelectableItem,
-    selectedItems,
-    // TODO: unregisterSelectableItem,
-  } = useSelectableGallery()
-
   return (
-    <div
-      key={item.id}
-      ref={ref => {
-        if (ref) {
-          registerSelectableItem(ref, item)
-        }
-      }}
+    <SelectableItem
       style={{
         height: item.image.height,
       }}>
-      <figure
-        className={`gallery-image-container ${
-          selectedItems.includes(item) ? 'selected' : ''
-        }`}>
-        <img
-          draggable="false"
-          className="object-cover w-full h-full"
-          src={item.image.url}
-        />
+      {({ selecting, selected }) => (
+        <figure
+          className={`gallery-image-container ${
+            selected || selecting ? 'selected' : ''
+          }`}>
+          <img
+            draggable="false"
+            className="object-cover w-full h-full"
+            src={item.image.url}
+          />
 
-        <figcaption className="hidden absolute bottom-3 right-3">
-          <button className="bg-gray-900 p-2 hover:opacity-80">
-            <BsPlus className="text-white" size={25} />
-          </button>
-        </figcaption>
-      </figure>
-    </div>
+          <figcaption className="hidden absolute bottom-3 right-3">
+            <button className="bg-gray-900 p-2 hover:opacity-80">
+              <BsPlus className="text-white" size={25} />
+            </button>
+          </figcaption>
+        </figure>
+      )}
+    </SelectableItem>
   )
 }
 

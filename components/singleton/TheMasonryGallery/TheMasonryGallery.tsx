@@ -1,4 +1,5 @@
-import Masonry from 'react-masonry-css'
+// import Masonry from 'react-masonry-css'
+import { SelectableArea, SelectionBox } from '@aeroxmotion/react-selectable'
 import CommonMasonryGalleryItem, {
   GalleryItem,
 } from '../../common/CommonMasonryGalleryItem/CommonMasonryGalleryItem'
@@ -9,15 +10,18 @@ export interface TheMasonryGalleryProps {
 
 const TheMasonryGallery: React.FC<TheMasonryGalleryProps> = ({ items }) => {
   return (
-    <Masonry
+    <SelectableArea
       id="gallery"
-      breakpointCols={{ default: 3 }}
-      className="masonry-gallery"
-      columnClassName="masonry-gallery__column">
+      options={{
+        toggleOnClick: true,
+        selectionMode: 'shift',
+      }}>
       {items.map(item => (
         <CommonMasonryGalleryItem key={item.id} item={item} />
       ))}
-    </Masonry>
+
+      <SelectionBox />
+    </SelectableArea>
   )
 }
 

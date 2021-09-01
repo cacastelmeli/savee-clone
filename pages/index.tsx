@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import { mock, raw } from '@mockpiler/compiler'
-import { CompileMock } from '@mockpiler/type-compiler'
+// import { CompileMock } from '@mockpiler/type-compiler'
 
 import TheHeader from '../components/singleton/TheHeader/TheHeader'
 import TheMasonryGallery, {
   TheMasonryGalleryProps,
 } from '../components/singleton/TheMasonryGallery/TheMasonryGallery'
-import { useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useHideHeaderOnScroll } from '../hooks/useHideHeaderOnScroll'
-import { SelectableGalleryProvider } from '../hooks/useSelectableGallery'
+import { useInfiniteScroll } from '../hooks/useInfiniteScroll'
 
 const heights = [200, 300, 500, 800]
 
@@ -26,28 +26,33 @@ const context = {
 
 const template = `
   [
-    (30) {
+    (50) {
       id
       image
     }
   ]
 `
 
-const items: TheMasonryGalleryProps['items'] = mock(context)`${raw(
-  template
-)}` as CompileMock<typeof template, typeof context>
+const loadItems = (): TheMasonryGalleryProps['items'] =>
+  mock(context)`${raw(template)}`
 
 const Home: NextPage = () => {
   const headerRef = useRef<HTMLElement>()
+  const [items, setItems] = useState(loadItems)
 
   useHideHeaderOnScroll(headerRef)
+  useInfiniteScroll(
+    useCallback(async () => {
+      await new Promise(resolve => setTimeout(resolve, 300))
+      setItems(items.concat(loadItems()))
+    }, [])
+  )
 
   return (
-    <SelectableGalleryProvider>
+    <>
       <TheHeader ref={ref => (headerRef.current = ref!)} />
-
       <TheMasonryGallery items={items} />
-    </SelectableGalleryProvider>
+    </>
   )
 }
 
