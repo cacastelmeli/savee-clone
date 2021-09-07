@@ -11,9 +11,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@aeroxmotion/react-selectable": "^0.2.1",
+    "@aeroxmotion/react-selectable": "^0.3.0",
     "@mockpiler/compiler": "^0.1.1",
     "@mockpiler/type-compiler": "^0.1.0",
+    "classnames": "^2.3.1",
     "ky": "^0.28.5",
     "next": "11.1.0",
     "react": "17.0.2",

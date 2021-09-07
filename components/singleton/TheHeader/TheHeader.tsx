@@ -16,15 +16,17 @@ const HeaderContainer = tw.header`
   z-10
 `
 
-const TheHeader = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
-  ({ ...headerProps }, ref) => {
+export interface TheHeaderProps extends React.HTMLAttributes<HTMLElement> {}
+
+const TheHeader = forwardRef<HTMLElement, TheHeaderProps>(
+  ({ children, ...headerProps }, ref) => {
     return (
       <HeaderContainer ref={ref} {...headerProps}>
         <a href="#" title="Home">
           <CommonLogo />
         </a>
 
-        <TheHeaderMenu />
+        {children}
       </HeaderContainer>
     )
   }

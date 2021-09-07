@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@aeroxmotion/react-selectable@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@aeroxmotion/react-selectable/-/react-selectable-0.2.1.tgz#68b91998ef8a29bc8920f036d530542c56a7b1de"
-  integrity sha512-FLq85Rpi9lsIZbiZKJb/cVuBI0ttYcU1uCcEQIZV5jSMdkfJo5suofDG8cvX9jyl9LzmVz2dXy5NrBQSLdyyXg==
+"@aeroxmotion/react-selectable@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@aeroxmotion/react-selectable/-/react-selectable-0.3.0.tgz#8d987aca710840c1f4e8144c55aaa9966aa0142a"
+  integrity sha512-Nz0aXOdbLTOzo5RONJcJCvOnGlFHg/0Q/V5NXUM8Hlrm1+g6FV3fVVixtiaVck8CDbV5FfXqwWMd0j1RRdke4Q==
   dependencies:
     react "^17.0.0"
     react-dom "^17.0.0"
@@ -3921,7 +3921,7 @@ classnames@2.2.6:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==

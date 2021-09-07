@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import classNames from 'classnames'
 import type { IconType, IconBaseProps } from 'react-icons'
-import { BsSearch, BsCursor } from 'react-icons/bs'
+import { BsSearch, BsCursor, BsCursorFill } from 'react-icons/bs'
 import { BiDotsHorizontalRounded } from 'react-icons/bi'
 import tw from 'tailwind-styled-components'
 
@@ -40,11 +41,12 @@ const HeaderMenuItemButton: React.FC<HeaderMenuItemButtonProps> = ({
         {...buttonProps}>
         {Icon && (
           <Icon
-            className={`text-gray-${hovered ? '400' : '700'} ${
-              iconProps?.className ?? ''
-            }`}
-            size={18}
             {...iconProps}
+            className={classNames(
+              `text-gray-${hovered ? '400' : '700'}`,
+              iconProps?.className
+            )}
+            size={iconProps?.size ?? 18}
           />
         )}
         {children}
@@ -53,13 +55,25 @@ const HeaderMenuItemButton: React.FC<HeaderMenuItemButtonProps> = ({
   )
 }
 
-const TheHeaderMenu: React.FC = () => {
+interface TheHeaderProps {
+  selectionEnabled: boolean
+  onSelectionEnabledChange: (nextSelectionEnabled: boolean) => void
+}
+
+const TheHeaderMenu: React.FC<TheHeaderProps> = ({
+  selectionEnabled,
+  onSelectionEnabledChange,
+}) => {
   return (
     <HeaderMenuList>
       <HeaderMenuItemButton Icon={BsSearch} />
       <HeaderMenuItemButton
-        Icon={BsCursor}
-        iconProps={{ style: { transform: 'rotateY(180deg)' }, size: 20 }}
+        Icon={selectionEnabled ? BsCursorFill : BsCursor}
+        iconProps={{
+          style: { transform: 'rotateY(180deg)' },
+          size: 20,
+        }}
+        onClick={() => onSelectionEnabledChange(!selectionEnabled)}
       />
       <HeaderMenuItemButton
         Icon={BiDotsHorizontalRounded}

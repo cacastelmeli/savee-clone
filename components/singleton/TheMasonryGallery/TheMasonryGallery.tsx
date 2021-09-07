@@ -1,5 +1,11 @@
 // import Masonry from 'react-masonry-css'
-import { SelectableArea, SelectionBox } from '@aeroxmotion/react-selectable'
+import { useEffect } from 'react'
+import {
+  selectableArea,
+  SelectionBox,
+  useSelectableArea,
+} from '@aeroxmotion/react-selectable'
+
 import CommonMasonryGalleryItem, {
   GalleryItem,
 } from '../../common/CommonMasonryGalleryItem/CommonMasonryGalleryItem'
@@ -8,21 +14,27 @@ export interface TheMasonryGalleryProps {
   items: GalleryItem[]
 }
 
-const TheMasonryGallery: React.FC<TheMasonryGalleryProps> = ({ items }) => {
-  return (
-    <SelectableArea
-      id="gallery"
-      options={{
-        toggleOnClick: true,
-        selectionMode: 'shift',
-      }}>
-      {items.map(item => (
-        <CommonMasonryGalleryItem key={item.id} item={item} />
-      ))}
+const TheMasonryGallery = selectableArea<TheMasonryGalleryProps>(
+  ({ items }) => {
+    const { areaRef, options, events } = useSelectableArea()
 
-      <SelectionBox />
-    </SelectableArea>
-  )
-}
+    useEffect(() => {
+      if (!options.selectionEnabled) {
+        // Deselect all items if selection is not enabled
+        events.trigger('deselectAll')
+      }
+    }, [options.selectionEnabled])
+
+    return (
+      <div id="gallery" className="selectable-area" ref={areaRef as any}>
+        {items.map(item => (
+          <CommonMasonryGalleryItem key={item.id} item={item} />
+        ))}
+
+        <SelectionBox />
+      </div>
+    )
+  }
+)
 
 export default TheMasonryGallery

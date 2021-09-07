@@ -9,6 +9,7 @@ import TheMasonryGallery, {
 import { useCallback, useRef, useState } from 'react'
 import { useHideHeaderOnScroll } from '../hooks/useHideHeaderOnScroll'
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll'
+import TheHeaderMenu from '../components/singleton/TheHeaderMenu/TheHeaderMenu'
 
 const heights = [200, 300, 500, 800]
 
@@ -38,7 +39,9 @@ const loadItems = (): TheMasonryGalleryProps['items'] =>
 
 const Home: NextPage = () => {
   const headerRef = useRef<HTMLElement>()
+
   const [items, setItems] = useState(loadItems)
+  const [selectionEnabled, setSelectionEnabled] = useState(false)
 
   useHideHeaderOnScroll(headerRef)
   useInfiniteScroll(
@@ -50,8 +53,22 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <TheHeader ref={ref => (headerRef.current = ref!)} />
-      <TheMasonryGallery items={items} />
+      <TheHeader id="header" ref={ref => (headerRef.current = ref!)}>
+        <TheHeaderMenu
+          selectionEnabled={selectionEnabled}
+          onSelectionEnabledChange={setSelectionEnabled}
+        />
+      </TheHeader>
+
+      <TheMasonryGallery
+        options={{
+          toggleOnClick: true,
+          selectionMode: 'shift',
+          selectionEnabled,
+          ignore: ['#header', '#header *'],
+        }}
+        items={items}
+      />
     </>
   )
 }
